@@ -1,0 +1,23 @@
+.vcenter {
+	width: 100%;	/* fill container (body) */
+	height: 100%; 
+	
+	display: flex;
+	justify-content: center;
+}
+
+.inner {
+  align-self: center;
+}
+
+body {
+	/* to prevent scrollbars from showing up */
+	left: 1px; top: 1px; right: 1px; bottom: 1px;
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
