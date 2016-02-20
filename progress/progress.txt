@@ -1,0 +1,8 @@
+021716
+	drafted a storyboard of the website
+		intention: minimalistic design to facilitate quicker development
+		describe future projects and experience using "cards"
+			goal: view projects and experience as a grid (with pictures) or list (concise)
+021816
+	started on home page html code
+	NEXT STEP: implement the css code to adjust text within the page
