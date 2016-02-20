@@ -15,3 +15,14 @@
 	adjusted margins
 		explicitly removed margins on body container to suppress scrollbars
 	changed classes and id's of components
+	
+	researched what other developers and content producers have been doing
+		https://www.themuse.com/advice/the-35-best-personal-websites-weve-ever-seen
+		
+	created a rule-of-third's grid
+		initially tried <hr>, kept running into issues with scrollbars
+		used nth-of-type(x) to avoid creating individual id's for each child div component
+		
+	NEXT: 	fix "hover flicker css" problem
+			create invisible/visible-on-hover icons at the intersections of the grid
+				change visibility field between visible and hidden

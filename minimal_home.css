@@ -1,45 +1,34 @@
-.flag {	/* https://css-tricks.com/examples/ShapesOfCSS/ */	
-  width: 200px;
-  height: 30px;
-  position: relative;	/*so the flag:after component can be absolute to this */
-  padding-top: 0px;
-  background: #eee;
+html , body, #firstcontainer, #grid {
+	width: 100%;
+	height: 100%;
 }
-.flag:before {
-  content: "";
-  position: absolute;
-  border-left: 10px solid #fff;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+
+body {
+	margin: 0; /* to prevent scrollbars from showing up */
+	font-family: 'Open Sans', sans-serif;
+}
+
+#grid {
+	display: none;
+}
+
+#firstcontainer, #secondcontainer, #grid, 
+/* having issues with "#grid div" */
+#grid div:nth-of-type(1), #grid div:nth-of-type(2), 
+#grid div:nth-of-type(3), #grid div:nth-of-type(4) {
+	position: absolute;
+}
+
+#firstcontainer {
+	display: flex;
+	justify-content: center; /* horizontal centering */
 }
 
 #firstinner {
 	align-self: center;	/* vertically centers within flex container */
 	text-align: center;
 	width: 500px;
-}
-
-#firstcontainer {
-	display: flex;
-	justify-content: center;
-}
-
-#secondcontainer {
-	top: 0;
-	right: 0;
-}
-
-#firstcontainer, #secondcontainer {
-	position: absolute;
-}
-
-blockquote footer {
-	text-align: right;
-}
-
-blockquote {
-	margin-top: 150px;
-	margin-bottom: 0;
+	/* height: 100%; */
 }
 
 h1 {
@@ -47,12 +36,61 @@ h1 {
 	font-size: 42px;
 }
 
-body {
-	margin: 0; /* to prevent scrollbars from showing up */
-	font-family: 'Open Sans', sans-serif;
-}	
-
-html , body, #firstcontainer {
-	width: 100%;
-	height: 100%;
+/*testing*/
+#firstcontainer:hover~#grid {
+	display: block;
 }
+#firstcontainer:hover~h1 {
+	background-color: red;
+}
+
+blockquote {
+	margin-top: 150px;
+	margin-bottom: 0;
+}
+
+blockquote footer {
+	text-align: right;
+}
+
+#secondcontainer {
+	top: 0;
+	right: 0;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0 20px 0 0;
+	padding: 0;
+	overflow: hidden;
+	float: right;
+}
+li {
+	/* don't put float:right here! will reverse the order of items*/
+	display: inline-block;
+}
+
+li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 20px 10px;
+	text-decoration: none;
+}
+
+#grid div:nth-of-type(1), #grid div:nth-of-type(2) {
+	width: 100%;
+	border-top: 1px solid #ddd;
+}
+#grid div:nth-of-type(1) { top: 33%; }
+#grid div:nth-of-type(2) { top: 67%; }
+
+#grid div:nth-of-type(3), #grid div:nth-of-type(4) {
+	width: 0;
+	height: 99.5%;
+	border-bottom: 0;
+	padding-bottom: 0;
+	border-left: 1px solid #ddd;
+}
+#grid div:nth-of-type(3) { left: 33%; }
+#grid div:nth-of-type(4) { left: 67%; }
