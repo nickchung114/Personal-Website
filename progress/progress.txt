@@ -26,3 +26,7 @@
 	NEXT: 	fix "hover flicker css" problem
 			create invisible/visible-on-hover icons at the intersections of the grid
 				change visibility field between visible and hidden
+	DONE
+	
+	added bold and underline on-hover for components in secondcontainer
+		text-decoration: underline, font-weight: bold
