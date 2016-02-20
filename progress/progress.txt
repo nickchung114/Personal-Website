@@ -6,3 +6,12 @@
 021816
 	started on home page html code
 	NEXT STEP: implement the css code to adjust text within the page
+	
+022016
+	absolutely positioned main div's
+	vertically and horizontally centered a div
+		used flexbox display (simple 3 lines of code)
+			http://stackoverflow.com/a/6490283
+	adjusted margins
+		explicitly removed margins on body container to suppress scrollbars
+	changed classes and id's of components
