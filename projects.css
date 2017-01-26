@@ -1,0 +1,50 @@
+body {
+	flex-flow: column; /* stack content vertically */
+}
+
+h1 {
+	text-align: center;
+	/*
+	background-color: #fcfcfc;
+	margin: 0;
+	border-top: 28px solid #fcfcfc;
+	border-bottom: 13px solid #fcfcfc; 
+	*/
+	display: inline-block;
+}
+
+h1::after {
+	content: '';
+	height: 2px;
+	width: 110%;
+	background-color: black;	
+	display: inline-block;
+	position: absolute;
+	bottom: 5%;
+	left: -5%;
+}
+
+.headercontainer {
+	position: relative;
+	display: block;
+}
+/*****************************************************************************/
+/*******************************GRID CSS STYLE********************************/
+/*****************************************************************************/
+
+/* https://css-tricks.com/dont-overthink-it-grids/ */
+.grid::after {
+	content: "";
+	display: table;
+	width: 0;
+}
+
+.card {
+	box-sizing: border-box;
+	padding: 20px;
+	border-radius: 50%;
+	width: 33.33%;
+	height: auto;
+	float: left;
+	background-color: #ff0000;
+}

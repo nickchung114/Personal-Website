@@ -23,10 +23,41 @@
 		initially tried <hr>, kept running into issues with scrollbars
 		used nth-of-type(x) to avoid creating individual id's for each child div component
 		
-	NEXT: 	fix "hover flicker css" problem
-			create invisible/visible-on-hover icons at the intersections of the grid
-				change visibility field between visible and hidden
-	DONE
+	fix "hover flicker css" problem
+	create invisible/visible-on-hover icons at the intersections of the grid
+		change visibility field between visible and hidden
 	
 	added bold and underline on-hover for components in secondcontainer
 		text-decoration: underline, font-weight: bold
+		
+	removed underline from nav menu on-hover
+	added LinkedIn link
+		included target="_blank" to open target in new tab
+	nav menu now cannot be highlighted
+	
+	embedded blockquote component into div
+		blockquote's position absolute relative to div container to float to the bottom
+	pushed repo to GitHub
+	added Resume to navmenu
+		pushed resume LaTEX repo to GitHub
+		added link to GitHub
+		
+	TASK:
+	create an overlay class
+		primarily to indicate what content is "coming soon!" 
+	COMPLETE:
+	found an appropriate icon
+		transitioned from "coming soon!" to "loading" to "under construction"
+		liked the current icon, but it was only in .png and .ico formats
+		tried several sites, best result came from convertio.co (png > svg)
+	created overlay for unfinished parts of the website
+	
+	removed "Experience" from the navmenu
+	
+	NEXT:
+	make the camera icon large, centered on the rule of thirds intersection, and of lower opacity
+	
+	create an on-hover textbox in the area between name and quotebox based on which hidden icon is hovered
+	
+	FUTURE:
+	make all numbers (font size, margin, padding, borders, etc) scale with screen size

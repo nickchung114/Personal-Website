@@ -1,43 +1,56 @@
-html , body, #firstcontainer, #grid  {
+html, #maincontainer {
 	width: 100%;
 	height: 100%;
 }
 
 body {
-	margin: 0; /* to prevent scrollbars from showing up */
-	font-family: 'Open Sans', sans-serif;
+	overflow: hidden;
+	transition: opacity 500ms;
 }
 
-#firstcontainer, #secondcontainer, .easteregg, #grid, 
-/* having issues with "#grid div" */
-#grid div:nth-of-type(1), #grid div:nth-of-type(2), 
-#grid div:nth-of-type(3), #grid div:nth-of-type(4) {
+#maincontainer, #navbar {
 	position: absolute;
 }
 
-#firstcontainer {
-	display: flex;
-	justify-content: center; /* horizontal centering */
+/*****************************************************************************/
+/**************************MAIN CONTAINER CSS STYLE***************************/
+/*****************************************************************************/
+#maincontainer > div {
+	width: 100%;
+	/* height: 100%; 	setting the height to any specific value creates problems */
 }
-#firstinner {
-	align-self: center;	/* vertically centers within flex container */
-	text-align: center;
-	width: 500px;
-	/* height: 100%; */
-}
-h1 {
+
+h3 {
 	margin-top: 0;
-	font-size: 42px;
+	font-weight: normal; /* no bold */	
+	font-size: 18px;
+	letter-spacing: 3px;
+}
+#postcontainer { 
+	width: 550px;
+	height: 35vh;
+	margin: 0px auto; /* fills the rest of the width with side margins */
+	position: relative;
 }
 blockquote {
-	margin-top: 150px;
-	margin-bottom: 0;
+	width: 100%;
+	margin: 0;	
+	text-align: left;
+	bottom: 0;
+	position: absolute;
+}
+blockquote > p {
+	margin-bottom: 1vh;
 }
 blockquote footer {
 	text-align: right;
 }
 
-#secondcontainer {
+/*****************************************************************************/
+/**************************NAVIGATION BAR CSS STYLE***************************/
+/*****************************************************************************/
+
+#navbar {
 	top: 0;
 	right: 0;
 }
@@ -58,40 +71,40 @@ li a {
 	text-align: center;
 	padding: 20px 15px;
 	text-decoration: none;
+	/* transition: color 0.1s;
+    -webkit-transition: color 0.1s; */
 }
-
 li a:hover {
 	font-weight: bold;
-	text-decoration: underline;
+	/* text-decoration: underline; */
+}
+.noselect { /* http://stackoverflow.com/a/4407335 */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
 }
 
-.easteregg  {
-	width: 48px; height: 48px; 	/* prevents flickering effect when applying hover */
-	z-index: 1;	
-	top: calc(33% - 24px); 		/* http://stackoverflow.com/a/14101451 */
+.overlay {
+	position: relative;
 }
-#ee1 { left: calc(33% - 24px); }
-#ee2 { left: calc(67% - 24px); }
-.easteregg:hover svg { visibility: visible; }
-.easteregg:hover~#grid { display: block; }
-svg { visibility: hidden; }
-
-#grid {
-	display: none;
+.overlay:after {
+	content:'';
+	position: absolute;
+	width: 100%; height: 100%;
+	top: 0; left: 0;
+	background: url(img/under-construction.svg);
+	background-size: 100% 100%;
+	opacity: 0;
+	/* transition: all 0.1s;
+    -webkit-transition: all 0.1s; */
 }
-#grid div:nth-of-type(1), #grid div:nth-of-type(2) {
-	width: 100%;
-	border-top: 1px solid #ddd;
+.overlay:hover:after {
+	opacity: 1;
 }
-#grid div:nth-of-type(1) { top: 33%; }
-#grid div:nth-of-type(2) { top: 67%; }
-
-#grid div:nth-of-type(3), #grid div:nth-of-type(4) {
-	width: 0;
-	height: 99.5%;
-	border-bottom: 0;
-	padding-bottom: 0;
-	border-left: 1px solid #ddd;
+.overlay:hover a {
+	color: transparent;
 }
-#grid div:nth-of-type(3) { left: 33%; }
-#grid div:nth-of-type(4) { left: 67%; }
